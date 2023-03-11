@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import 'inscription.dart';
 import 'home_page.dart';
 
-class AddAccountPage extends StatefulWidget {
-  const AddAccountPage({Key? key}) : super(key: key);
+class AddAccountPage2 extends StatefulWidget {
+  const AddAccountPage2({Key? key}) : super(key: key);
 
   @override
-  State<AddAccountPage> createState() => _AddAccountPageState();
+  State<AddAccountPage2> createState() => _AddAccountPageState2();
 }
 
-class _AddAccountPageState extends State<AddAccountPage> {
+class _AddAccountPageState2 extends State<AddAccountPage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Connectes toi!'),
+        title: const Text('Créer ton compte'),
       ),
       body: Container(
         margin: const EdgeInsets.all(20),
@@ -25,14 +25,37 @@ class _AddAccountPageState extends State<AddAccountPage> {
               TextFormField(
                 decoration: const InputDecoration(
                   icon: Icon(Icons.person),
-                  hintText: 'Entrez votre identifiant',
-                  labelText: 'Identifiant',
+                  hintText: 'Entrez votre nom',
+                  labelText: 'Nom',
                 ),
                 onSaved: (String? value) {
                   // This optional block of code can be used to run
                   // code when the user saves the form.
                 },
               ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person),
+                  hintText: 'Entrez votre prénom',
+                  labelText: 'Prénom',
+                ),
+                onSaved: (String? value) {
+                  // This optional block of code can be used to run
+                  // code when the user saves the form.
+                },
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.phone),
+                  hintText: 'Entrez votre téléphone',
+                  labelText: 'Téléphone',
+                ),
+                onSaved: (String? value) {
+                  // This optional block of code can be used to run
+                  // code when the user saves the form.
+                },
+              ),
+
               TextFormField(
                 decoration: const InputDecoration(
                   icon: Icon(Icons.password),
@@ -57,20 +80,7 @@ class _AddAccountPageState extends State<AddAccountPage> {
                         )
                     );
                   },
-                  child: Text("se connecter")),
-              ElevatedButton(
-                  style: ButtonStyle(
-                      padding: MaterialStatePropertyAll(EdgeInsets.all(10))
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        PageRouteBuilder(
-                            pageBuilder: (_, __, ___) => AddAccountPage2()
-                        )
-                    );
-                  },
-                  child: Text("s'inscrire"))
+                  child: Text("s'inscrire")),
             ],
 
           ),

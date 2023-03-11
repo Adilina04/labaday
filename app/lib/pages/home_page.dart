@@ -1,7 +1,8 @@
+import 'package:app/pages/camera.dart';
 import 'package:flutter/material.dart';
 
 import 'add.dart';
-import 'connexion.dart';
+import 'inscription.dart';
 class HomePage extends StatelessWidget {
   const HomePage({
     super.key,
@@ -10,14 +11,27 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => CameraApp()
+              )
+          );
+        },
+        child: Icon(Icons.camera_alt),
+      ),
       appBar: AppBar(
+        leading: Icon(Icons.home),
         title: const Text("Accueil"),
       ),
       body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/images/2.jpg"),
+
+              Image.asset("assets/images/logo.png"),
               Padding(padding: EdgeInsets.all(10)),
               const Text(
                 "Bienvenue",
@@ -40,11 +54,13 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                         context,
                         PageRouteBuilder(
-                            pageBuilder: (_, __, ___) => EventPage()
+                            pageBuilder: (_, __, ___) => AddAccountPage()
                         )
                     );
                   },
-                  child: Text("Connexion/Inscription"))
+                  child: Text("Connexion/Inscription")),
+
+
             ],
           )
       ),
